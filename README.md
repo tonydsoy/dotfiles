@@ -1,8 +1,49 @@
-# my dotfiles!!
+# my dotfiles.
 
-most of the folders here are plucked straight from my .config directory<br>
-the images are for the neofetch and hypr configs.
+made for arch.
+written on a laptop.
 
-batalert is a program I wrote because "if i write it myself, it'll have maximum customizability"
+rename config to .config before putting stuff into your home directory.
 
-i use default config for pretty much anything that isn't here.
+using the fish terminal shell.
+
+required apps:
+
+hyprland-git (AUR)
+
+rofi
+
+wofi
+
+swaybg
+
+hyprlock
+
+hypridle
+
+hyprpicker
+
+waybar
+
+grim
+
+slurp
+
+dunst
+
+fish
+
+thunar
+
+zen-browser (AUR)
+
+kitty
+
+flatpak
+
+hyprpolkitagent
+
+xdg-desktop-portal-hyprland
+
+catppuccin-cursors-mocha (AUR)
+
