@@ -1,3 +1,4 @@
+-- 168j to end of r_highlight
 function r_highlight()
     local gruvbox = require("gruvbox").palette
     return {
@@ -19,6 +20,7 @@ function r_highlight()
                 bg = gruvbox.dark2,
                 fg = gruvbox.light0
             },
+            -- separators
             separator = {
                 bg = gruvbox.dark1,
                 fg = gruvbox.dark0
@@ -30,6 +32,11 @@ function r_highlight()
             separator_selected = {
                 bg = gruvbox.dark2,
                 fg = gruvbox.dark0
+            },
+            -- offset separator
+            offset_separator = {
+                bg = gruvbox.dark0,
+                fg = gruvbox.dark3,
             },
             close_button = {
                 bg = gruvbox.dark1,
@@ -150,6 +157,11 @@ function r_highlight()
             error_diagnostic_selected = {
                 bg = gruvbox.dark2,
                 fg = gruvbox.bright_red
+            },
+            -- trunc marker
+            trunc_marker = {
+                bg = gruvbox.dark1,
+                fg = gruvbox.light2
             }
         }
 
@@ -200,9 +212,15 @@ return {{'akinsho/bufferline.nvim', version = "*", dependencies = 'nvim-tree/nvi
             offsets = {
                 {
                     filetype = "NvimTree",
-                    text = "File Explorer",
+                    text = "File Explorer (nvimtree)",
                     text_align = "left",
                     separator = true
+                },
+                {
+                    filetype = "snacks_layout_box",
+                    text = " ⚞(-.-)⚟ ",
+                    text_align = "center",
+                    separator = true,
                 }
             },
             separator_style = "slope"

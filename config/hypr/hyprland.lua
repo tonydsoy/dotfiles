@@ -273,6 +273,7 @@ hl.bind(mainMod .. " + Q", hl.dsp.exec_cmd(browser))
 hl.bind(mainMod .. " + D", hl.dsp.exec_cmd("kitty -d ~/share/ fish -lic 'y;nvim .'"))
 hl.bind(mainMod .. " + N", hl.dsp.exec_cmd("kitty ~/scripts/newnote.sh"))
 hl.bind(mainMod .. " + G", hl.dsp.exec_cmd("hyprpicker -a"))
+hl.bind(mainMod .. " + H", hl.dsp.exec_cmd("~/scripts/close-hypr-after-seconds 3"))
 
 hl.bind(mainMod .. " + Return", hl.dsp.exec_cmd(terminal))
 local closeWindowBind = hl.bind(mainMod .. " + C", hl.dsp.window.close())

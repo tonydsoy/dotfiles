@@ -7,20 +7,24 @@ end
 #end
 
 function nvim
-    kitten @ set-background-opacity 1
+    #kitten @ set-background-opacity 1
+    ps cax | grep kitty > /dev/null
+    if test $status = 0
+        kitten @ set-background-opacity 1
+    end
 	/usr/bin/nvim $argv
-    kitten @ set-background-opacity 0.5
+    ps cax | grep kitty > /dev/null
+    if test $status = 0
+        kitten @ set-background-opacity 0.5
+    end
+    # kitten @ set-background-opacity 0.5
 end
 
 
 function vim
-    kitten @ set-background-opacity 1
-	/usr/bin/nvim $argv
-    kitten @ set-background-opacity 0.5
+    nvim $argv
 end
 
 function vi
-    kitten @ set-background-opacity 1
-    /usr/bin/nvim $argv
-    kitten @ set-background-opacity 0.5
+    nvim $argv
 end

@@ -25,7 +25,24 @@ return {{
     -- C-k: Toggle signature help (if signature.enabled = true)
     --
     -- See :h blink-cmp-config-keymap for defining your own keymap
-    keymap = { preset = 'default' },
+    keymap = { preset = 'default',
+        ['<C-space>'] = { 'show', 'show_documentation', 'hide_documentation' },
+        ['<C-e>'] = { 'hide', 'fallback' },
+        ['<Tab>'] = { 'select_and_accept', 'fallback' },
+
+        ['<Up>'] = { 'select_prev', 'fallback' },
+        ['<Down>'] = { 'select_next', 'fallback' },
+        ['<C-p>'] = { 'select_prev', 'fallback_to_mappings' },
+        ['<C-n>'] = { 'select_next', 'fallback_to_mappings' },
+
+        ['<C-b>'] = { 'scroll_documentation_up', 'fallback' },
+        ['<C-f>'] = { 'scroll_documentation_down', 'fallback' },
+
+        ['<Enter>'] = { 'snippet_forward', 'fallback' },
+        ['<S-Enter>'] = { 'snippet_backward', 'fallback' },
+
+        ['<C-k>'] = { 'show_signature', 'hide_signature', 'fallback' },
+},
 
     appearance = {
       -- 'mono' (default) for 'Nerd Font Mono' or 'normal' for 'Nerd Font'
@@ -34,7 +51,11 @@ return {{
     },
 
     -- (Default) Only show the documentation popup when manually triggered
-    completion = { documentation = { auto_show = false } },
+    completion = {
+        documentation = { auto_show = false,},
+        menu = { border = 'single',scrollbar = false },
+    },
+    signature = { window = { border = 'single' } },
 
     -- Default list of enabled providers defined so that you can extend it
     -- elsewhere in your config, without redefining it, due to `opts_extend`
@@ -47,7 +68,44 @@ return {{
     -- when the Rust fuzzy matcher is not available, by using `implementation = "prefer_rust"`
     --
     -- See the fuzzy documentation for more information
-    fuzzy = { implementation = "prefer_rust_with_warning" }
+    fuzzy = { implementation = "prefer_rust_with_warning" },
   },
-  opts_extend = { "sources.default" }
+  --highlights = tk_blink_highlight(),
+  opts_extend = { "sources.default" },
 }}
+
+--[[
+LIST ALL HIGHLIGHTS
+
+BlinkCmpCursorLineDocumentationHack
+BlinkCmpCursorLineMenuHack
+BlinkCmpDoc
+BlinkCmpDocBorder
+BlinkCmpDocCursorLine
+BlinkCmpDocSeparator
+BlinkCmpGhostText
+BlinkCmpKind
+BlinkCmpKindClass
+BlinkCmpKindColor
+BlinkCmpKindConstant
+BlinkCmpKindConstructor
+BlinkCmpKindEnum
+BlinkCmpKindEnumMember
+BlinkCmpKindEvent
+BlinkCmpKindField
+BlinkCmpKindFile
+BlinkCmpKindFolder
+BlinkCmpKindFunction
+BlinkCmpKindInterface
+BlinkCmpKindKeyword
+BlinkCmpKindMethod
+BlinkCmpKindModule
+BlinkCmpKindOperator
+BlinkCmpKindProperty
+BlinkCmpKindReference
+BlinkCmpKindSnippet
+BlinkCmpKindStruct
+BlinkCmpKindText
+BlinkCmpKindTy
+
+--]]
